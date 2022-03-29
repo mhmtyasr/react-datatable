@@ -1,0 +1,203 @@
+$black: #000000;
+$white: #fff;
+$gray: #f8f8f8;
+$grayDark: #ddd;
+$bgColorRed: #fb4f83;
+$bgColorBlue: #1890ff;
+$bgColorBlueOpacity: #188fff7e;
+
+@mixin mobile {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+.tableContainer {
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+
+        @include mobile() {
+            border: 0;
+
+            thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: 0.8em;
+                text-align: right;
+
+                &::before {
+                    content: attr(data-label);
+                    float: left;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        caption {
+            font-size: 1.5em;
+            margin: 0.5em 0 0.75em;
+
+            @include mobile() {
+                font-size: 1.3em;
+            }
+        }
+        tr {
+            background-color: $gray;
+            border: 1px solid $grayDark;
+            padding: 0.35em;
+
+            &.selected {
+                background-color: $bgColorRed !important;
+            }
+
+            @include mobile() {
+                border-bottom: 3px solid $gray;
+                display: block;
+                margin-bottom: 0.625em;
+            }
+        }
+
+        th,
+        td {
+            padding: 0.625em;
+            text-align: center;
+        }
+
+        th {
+            font-size: 0.85em;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+    }
+
+    .switchContainer {
+        display: flex;
+        align-items: center;
+
+        p {
+            margin-left: 10px;
+            font-size: 1rem;
+        }
+        label {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+
+            input {
+                display: none;
+            }
+        }
+        .slider {
+            background-color: $grayDark;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: 0.4s;
+            border-radius: 34px;
+
+            &:before {
+                background-color: $white;
+                bottom: 4px;
+                content: "";
+                height: 26px;
+                left: 4px;
+                position: absolute;
+                transition: 0.4s;
+                width: 26px;
+                border-radius: 50%;
+            }
+        }
+        input:checked + .slider {
+            background-color: #66bb6a;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    }
+
+    .paginationContainer {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        button {
+            margin-right: 4px;
+        }
+    }
+
+    button {
+        line-height: 1.5715;
+        position: relative;
+        display: inline-block;
+        font-weight: 400;
+        white-space: nowrap;
+        text-align: center;
+        background-image: none;
+        border: 1px solid transparent;
+        box-shadow: 0 2px #00000004;
+        height: 32px;
+        padding: 4px 15px;
+        font-size: 14px;
+        border-radius: 6px;
+        border-color: $bgColorBlue;
+        background: $bgColorBlue;
+        color: $white;
+
+        &:disabled,
+        &[disabled] {
+            opacity: 0.8;
+            cursor: not-allowed;
+        }
+    }
+
+    &.darkMod {
+        background-color: $black;
+
+        .switchContainer {
+            p {
+                color: $white;
+            }
+        }
+        table {
+            background-color: $black;
+
+            tr {
+                background-color: transparent;
+                color: $white;
+            }
+        }
+        button {
+            background-color: $white;
+            color: $black;
+            border: $white;
+        }
+        .paginationContainer {
+            color: $white;
+        }
+    }
+}
