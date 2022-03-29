@@ -46,10 +46,10 @@ In your file :
 
 ### Prop Types
 
-| Property      |     Type     | Required? | Description                       |
-| :------------ | :----------: | :-------: | :-------------------------------- |
-| dataSource    |   object[]   |    yes    | Data record array to be displayed |
-| columns       | ColumProps[] |    yes    | Columns of table                  |
-| onRowSelected |   object[]   |    no     | Return selected Row data          |
-| className     |   string[]   |    no     |                                   |
-| style         |   string[]   |    no     |                                   |
+| Property      |       Type        | Required? | Description                       |
+| :------------ | :---------------: | :-------: | :-------------------------------- |
+| dataSource    |     object[]      |    yes    | Data record array to be displayed |
+| columns       |   ColumProps[]    |    yes    | Columns of table                  |
+| onRowSelected | function():Object |    no     | Return selected Row data          |
+| className     |     string[]      |    no     |                                   |
+| style         |     string[]      |    no     |                                   |
