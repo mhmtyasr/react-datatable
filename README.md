@@ -2,14 +2,15 @@
 
 # Table of Contents
 
+- [** Getting Started**](#Getting Started)
 - [**Example**](#Example)
 - [**Prop Types**](#prop-types)
 
-## Example
+## Getting Started
 
 [**Live implementation**](https://react-datatable-flame.vercel.app/)
 
-## Getting Started
+## Example
 
 In your file :
 
