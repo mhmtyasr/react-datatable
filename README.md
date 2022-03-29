@@ -2,7 +2,7 @@
 
 # Table of Contents
 
-- [** Getting Started**](#Getting Started)
+- [**GettingStarted**](#Getting Started)
 - [**Example**](#Example)
 - [**Prop Types**](#prop-types)
 
