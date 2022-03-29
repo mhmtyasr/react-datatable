@@ -14,142 +14,86 @@ function App() {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: true,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: true,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: true,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
-        },
-        {
-          name: "ali",
-          lastname: "cevik",
-          email: "email",
+          isMarried: false,
         },
 
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
         {
           name: "ali",
           lastname: "cevik",
           email: "email",
+          isMarried: false,
         },
       ]}
       columns={[
@@ -164,6 +108,10 @@ function App() {
         {
           title: "E mail",
           dataIndex: "email",
+        },
+        {
+          title: "Evli mi ?",
+          dataIndex: "isMarried",
         },
       ]}
     ></Table>

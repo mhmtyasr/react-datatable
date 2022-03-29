@@ -19,31 +19,29 @@ export const EditableItem: React.FC<EditableItemProps> = ({
   }, [editing]);
   return (
     <div className={`editableContainer`} style={{ zIndex: 1 }}>
-      {editing ? (
-        typeof value !== "boolean" ? (
-          <input
-            ref={inputRef}
-            value={value}
-            onChange={(e) => {
-              onChange(e.target.value);
-            }}
-            onBlur={(e) => {
-              setEditing(!editing);
-            }}
-          ></input>
-        ) : (
-          <input
-            type={"checkbox"}
-            ref={inputRef}
-            checked={value}
-            onChange={(e) => {
-              onChange(e.target.checked);
-            }}
-            onBlur={(e) => {
-              setEditing(!editing);
-            }}
-          ></input>
-        )
+      {typeof value === "boolean" ? (
+        <input
+          type={"checkbox"}
+          ref={inputRef}
+          checked={value}
+          onChange={(e) => {
+            onChange(e.target.checked);
+          }}
+          onBlur={(e) => {
+            setEditing(!editing);
+          }}
+        ></input>
+      ) : editing ? (
+        <input
+          ref={inputRef}
+          value={value}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
+          onBlur={(e) => {
+            setEditing(!editing);
+          }}
+        ></input>
       ) : (
         <span
           onClick={(e) => {
