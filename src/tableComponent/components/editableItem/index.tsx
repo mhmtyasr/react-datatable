@@ -18,18 +18,21 @@ export const EditableItem: React.FC<EditableItemProps> = ({
     }
   }, [editing]);
   return (
-    <div className={`editableContainer`} style={{ zIndex: 1 }}>
+    <div className={`editableContainer`}>
       {typeof value === "boolean" ? (
         <input
           type={"checkbox"}
           ref={inputRef}
           checked={value}
+          onClick={(e) => {
+            e.stopPropagation();
+            return;
+          }}
           onChange={(e) => {
             onChange(e.target.checked);
+            e.stopPropagation();
           }}
-          onBlur={(e) => {
-            setEditing(!editing);
-          }}
+         
         ></input>
       ) : editing ? (
         <input
